@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RunParty invite</title>
+<link rel="icon" href="../favicon.png">
+<meta name="description" content="An invite to a RunParty party or crew.">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<style>
+  :root {
+    --bg: #0b0d0c;
+    --panel: #17191a;
+    --ink: #f2f4f3;
+    --muted: #9aa09d;
+    --lime: #b2ff3b;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; min-height: 100vh;
+    background: var(--bg); color: var(--ink);
+    font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    display: flex; align-items: center; justify-content: center;
+  }
+  main { width: 100%; max-width: 440px; padding: 32px 16px; text-align: center; }
+  .logo { width: 88px; height: 88px; border-radius: 22px; }
+  h1 { font-size: 26px; line-height: 1.25; margin: 20px 0 6px; }
+  p { color: var(--muted); margin: 0 0 8px; }
+  .panel { background: var(--panel); border-radius: 20px; padding: 20px 16px; margin: 24px 0; }
+  .label { font-size: 14px; font-weight: 700; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+  .code { font-size: 44px; font-weight: 800; letter-spacing: .14em; margin: 4px 0 0; color: var(--ink); }
+  .button {
+    display: block; width: 100%; border: 0; border-radius: 999px; cursor: pointer;
+    padding: 16px; font: inherit; font-weight: 800; text-decoration: none;
+    background: var(--lime); color: #0b0d0c; margin-top: 12px;
+  }
+  .button.plain { background: var(--panel); color: var(--ink); }
+  .hint { font-size: 15px; margin-top: 20px; }
+  .bad { color: var(--ink); }
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="../icon.png" alt="" width="88" height="88">
+  <h1 id="title">You're invited to RunParty</h1>
+  <p id="lead"></p>
+  <div class="panel" id="codePanel" hidden>
+    <div class="label" id="codeLabel">Code</div>
+    <div class="code" id="code"></div>
+  </div>
+  <a class="button" id="open" href="#" hidden>Open in RunParty</a>
+  <button class="button plain" id="copy" type="button" hidden>Copy code</button>
+  <p class="hint" id="hint"></p>
+</main>
+<script>
+(function () {
+  var words = {
+    en: {
+      party: "You're invited to a run party",
+      crew: "You're invited to a crew",
+      bad: "This invite link is not complete",
+      badLead: "Ask for the invite again, or type the code in RunParty.",
+      lead: "RunParty opens it for you. If it doesn't, type the code in the app.",
+      code: "Code",
+      open: "Open in RunParty",
+      copy: "Copy code",
+      copied: "Copied",
+      hintParty: "In RunParty: Lobby, the middle button, Join with a code.",
+      hintCrew: "In RunParty: Crews, the middle button, Join with a code."
+    },
+    ko: {
+      party: "런 파티에 초대받았어요",
+      crew: "크루에 초대받았어요",
+      bad: "초대 링크가 완전하지 않아요",
+      badLead: "초대를 다시 받거나 RunParty에서 코드를 입력하세요.",
+      lead: "RunParty가 열려요. 열리지 않으면 앱에서 코드를 입력하세요.",
+      code: "코드",
+      open: "RunParty에서 열기",
+      copy: "코드 복사",
+      copied: "복사했어요",
+      hintParty: "RunParty: 로비, 가운데 버튼, 코드로 참가.",
+      hintCrew: "RunParty: 크루, 가운데 버튼, 코드로 참가."
+    },
+    mn: {
+      party: "Таныг гүйлтийн үдэшлэгт урьж байна",
+      crew: "Таныг багт урьж байна",
+      bad: "Урилгын холбоос дутуу байна",
+      badLead: "Урилгыг дахин аваарай, эсвэл RunParty-д кодыг бичнэ үү.",
+      lead: "RunParty өөрөө нээгдэнэ. Нээгдэхгүй бол апп дотор кодыг бичнэ үү.",
+      code: "Код",
+      open: "RunParty-д нээх",
+      copy: "Код хуулах",
+      copied: "Хуулсан",
+      hintParty: "RunParty: Лобби, голын товч, Кодоор нэгдэх.",
+      hintCrew: "RunParty: Багууд, голын товч, Кодоор нэгдэх."
+    }
+  };
+  var lang = (navigator.language || "en").slice(0, 2).toLowerCase();
+  var t = words[lang] || words.en;
+  document.documentElement.lang = words[lang] ? lang : "en";
+
+  var params = new URLSearchParams(location.search);
+  var kind = params.get("c") ? "crew" : "party";
+  var code = (params.get(kind === "crew" ? "c" : "p") || "").toUpperCase();
+  var $ = function (id) { return document.getElementById(id); };
+
+  if (!/^[A-Z0-9]{6}$/.test(code)) {
+    $("title").textContent = t.bad;
+    $("lead").textContent = t.badLead;
+    return;
+  }
+
+  $("title").textContent = t[kind];
+  $("lead").textContent = t.lead;
+  $("codeLabel").textContent = t.code;
+  $("code").textContent = code;
+  $("codePanel").hidden = false;
+  $("hint").textContent = kind === "crew" ? t.hintCrew : t.hintParty;
+
+  // Android opens the app through an intent (and comes back here, with
+  // tried=1, when RunParty isn't installed); other phones use the scheme.
+  var path = kind + "/" + code;
+  var android = /android/i.test(navigator.userAgent);
+  var back = location.origin + location.pathname + "?" +
+    (kind === "crew" ? "c=" : "p=") + code + "&tried=1";
+  var link = android
+    ? "intent://" + path + "#Intent;scheme=runparty;package=com.tulgashdee.runparty;S.browser_fallback_url=" +
+      encodeURIComponent(back) + ";end"
+    : "runparty://" + path;
+
+  var open = $("open");
+  open.textContent = t.open;
+  open.href = link;
+  open.hidden = false;
+
+  var copy = $("copy");
+  copy.textContent = t.copy;
+  copy.hidden = false;
+  copy.addEventListener("click", function () {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(code).then(function () {
+        copy.textContent = t.copied;
+      });
+    }
+  });
+
+  if (!params.get("tried")) location.href = link;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RunParty · Privacy policy</title>
+<link rel="icon" href="favicon.png">
+<meta name="description" content="What RunParty keeps on your phone, what goes to its server, and how to delete it.">
+<meta name="color-scheme" content="dark">
+<style>
+  :root {
+    --bg: #0b0d0c;
+    --panel: #17191a;
+    --ink: #f2f4f3;
+    --muted: #9aa09d;
+    --lime: #b2ff3b;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    overflow-wrap: break-word;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+  .logo { width: 64px; height: 64px; flex: none; border-radius: 16px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0; }
+  h1 span { display: block; font-size: 20px; font-weight: 500; color: var(--muted); }
+  .updated { color: var(--muted); margin: 4px 0 24px; }
+  nav { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+  section { background: var(--panel); border-radius: 20px; padding: 8px 24px 16px; margin-top: 24px; }
+  @media (max-width: 480px) {
+    main { padding-top: 24px; }
+    section { padding: 4px 16px 12px; }
+    h1 { font-size: 26px; }
+  }
+  h2 { font-size: 22px; line-height: 1.3; margin: 24px 0 4px; scroll-margin-top: 16px; }
+  ul { padding-left: 20px; }
+  li { margin: 6px 0; }
+  a { color: var(--lime); font-weight: 600; }
+  strong { font-weight: 650; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img class="logo" src="icon.png" alt="" width="64" height="64">
+    <h1>RunParty <span>Privacy policy</span></h1>
+  </header>
+  <p class="updated">Effective date: 9 October 2026</p>
+  <nav><a href="#phone">On your phone</a><a href="#server">On the server</a><a href="#others">What others see</a><a href="#delete">Delete your data</a><a href="#contact">Contact</a></nav>
+
+  <section>
+    <p>RunParty is an app for running, hiking and riding together: people host parties (a route, a time, a pace and a number of places), others join, and each party has a chat and a schedule. It is made by an independent developer. This policy explains, in plain words, what stays on your phone, what goes to RunParty's server, who can see it, and how to delete it.</p>
+
+    <h2>In short</h2>
+    <ul>
+      <li><strong>Your runs, your GPS tracks, your steps, your photos and your videos stay on your phone.</strong></li>
+      <li>The server holds only what is needed to run together: your profile, the parties you host or join, their chat, your check-ins, and a short public summary you can switch off.</li>
+      <li>No ads, no advertising ID, no analytics and no tracking. Nothing is sold.</li>
+    </ul>
+
+    <h2 id="phone">What stays on your phone</h2>
+    <ul>
+      <li><strong>Your position</strong>, with Android's location permission, to show you on the map, find parties near you and plan routes. Your track is not sent anywhere.</li>
+      <li><strong>Steps and activity</strong>, from Health Connect (Apple Health on iPhone) if you allow it, for your streaks, step rank and daily goal. Steps never leave the phone.</li>
+      <li><strong>Photos from your gallery</strong>, if you allow it, only to put the ones taken during a run on that run's route in the pictures and videos you make. They are not uploaded.</li>
+      <li><strong>Pictures and videos you make</strong> are saved in your gallery (Pictures and Movies, RunParty).</li>
+      <li><strong>Reminders</strong> are scheduled on the phone, and the phone's motion sensor only moves a button slightly while it is on screen.</li>
+    </ul>
+
+    <h2 id="server">What goes to the server</h2>
+    <p>RunParty's server runs on Supabase (in Seoul, South Korea). It keeps:</p>
+    <ul>
+      <li><strong>Your account</strong>: an anonymous sign-in made by the app, and, if you link one, your Google or Apple account or email address.</li>
+      <li><strong>Your profile</strong>: the name you choose, your profile photo if you add one (made small, 256 pixels), your country, a few words about you, and your Instagram name if you add it.</li>
+      <li><strong>Parties and crews</strong> you host or join: their route, meeting point, time, pace and members, and the chat messages written in them.</li>
+      <li><strong>Check-ins</strong>: when you check in to a party run. To check in, the app sends your position once so the server can see you are near the start; the position itself is not kept. Check-ins count towards your level, badges and the leaderboard (distance gone with parties).</li>
+      <li><strong>A short public summary</strong>, unless you switch it off: your level, your run-streak weeks and your step rank (a name like Bronze, not your steps).</li>
+      <li><strong>Ratings</strong> runners give each other after a run, and who you have blocked or muted.</li>
+    </ul>
+    <p>All of this travels encrypted (HTTPS).</p>
+
+    <h2>Other services the app uses</h2>
+    <ul>
+      <li><strong>Maps</strong> from OpenFreeMap (tiles.openfreemap.org): the app asks for the pieces of the map on the screen. See <a href="https://openfreemap.org/privacy/">openfreemap.org/privacy</a>.</li>
+      <li><strong>Routes and place search</strong> from OpenRouteService, through RunParty's server: the points of a route you plan, or the words you search for, are sent to it, without your account.</li>
+      <li><strong>Weather</strong> from Open-Meteo (api.open-meteo.com): the meeting point and time of a party, to show its forecast.</li>
+    </ul>
+    <p>Like every internet connection, these requests carry your phone's IP address.</p>
+
+    <h2 id="others">What other people see</h2>
+    <ul>
+      <li>Public parties, with their route, meeting point and time, can be seen by everyone using RunParty. Private parties only by the host, its runners and people with its code.</li>
+      <li>Other runners see your profile (name, photo, country, Instagram, the summary above, your badges earned with party runs, your ratings and crews), and your messages in the chats you are in.</li>
+      <li>Invite links and codes you share open the party or crew for whoever gets them.</li>
+    </ul>
+
+    <h2>Sharing</h2>
+    <p>Pictures and videos of your runs are shared only when you choose to, through the phone's share menu, to the app and people you pick.</p>
+
+    <h2>Children</h2>
+    <p>RunParty is not directed at children under 13.</p>
+
+    <h2 id="delete">Keeping and deleting your data</h2>
+    <ul>
+      <li>What is on your phone is deleted when you clear the app's storage or uninstall it. Pictures and videos you saved stay in your gallery until you delete them.</li>
+      <li>You can delete your own chat messages, leave parties and crews, and change or remove your profile photo and details in the app.</li>
+      <li>To delete your account and everything the server keeps about you, write to us (below) with your RunParty name; we delete it within 30 days.</li>
+    </ul>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the new version is posted on this page and the date at the top changes too.</p>
+
+    <h2 id="contact">Contact</h2>
+    <p>Questions about this policy or about RunParty: <a href="mailto:gerlabsapp@gmail.com">gerlabsapp@gmail.com</a></p>
+  </section>
+</main>
+</body>
+</html>
