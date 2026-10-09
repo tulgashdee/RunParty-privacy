@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RunParty invite</title>
 <link rel="icon" href="../favicon.png">
-<meta name="description" content="An invite to a RunParty party or crew.">
+<meta name="description" content="An invite to a RunParty route or club.">
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="dark">
 <style>
@@ -58,8 +58,8 @@
 (function () {
   var words = {
     en: {
-      party: "You're invited to a run party",
-      crew: "You're invited to a crew",
+      party: "You're invited to a route",
+      crew: "You're invited to a club",
       bad: "This invite link is not complete",
       badLead: "Ask for the invite again, or type the code in RunParty.",
       lead: "RunParty opens it for you. If it doesn't, type the code in the app.",
@@ -67,12 +67,12 @@
       open: "Open in RunParty",
       copy: "Copy code",
       copied: "Copied",
-      hintParty: "In RunParty: Lobby, the middle button, Join with a code.",
-      hintCrew: "In RunParty: Crews, the middle button, Join with a code."
+      hintParty: "In RunParty: the + at the top left, Join with a code.",
+      hintCrew: "In RunParty: the + at the top left, Join with a code."
     },
     ko: {
-      party: "런 파티에 초대받았어요",
-      crew: "크루에 초대받았어요",
+      party: "코스에 초대받았어요",
+      crew: "클럽에 초대받았어요",
       bad: "초대 링크가 완전하지 않아요",
       badLead: "초대를 다시 받거나 RunParty에서 코드를 입력하세요.",
       lead: "RunParty가 열려요. 열리지 않으면 앱에서 코드를 입력하세요.",
@@ -80,12 +80,12 @@
       open: "RunParty에서 열기",
       copy: "코드 복사",
       copied: "복사했어요",
-      hintParty: "RunParty: 로비, 가운데 버튼, 코드로 참가.",
-      hintCrew: "RunParty: 크루, 가운데 버튼, 코드로 참가."
+      hintParty: "RunParty: 왼쪽 위 +, 코드로 참가.",
+      hintCrew: "RunParty: 왼쪽 위 +, 코드로 참가."
     },
     mn: {
-      party: "Таныг гүйлтийн бүлэгт урьж байна",
-      crew: "Таныг багт урьж байна",
+      party: "Таныг маршрутад урьж байна",
+      crew: "Таныг клубт урьж байна",
       bad: "Урилгын холбоос дутуу байна",
       badLead: "Урилгыг дахин аваарай, эсвэл RunParty-д кодыг бичнэ үү.",
       lead: "RunParty өөрөө нээгдэнэ. Нээгдэхгүй бол апп дотор кодыг бичнэ үү.",
@@ -93,8 +93,8 @@
       open: "RunParty-д нээх",
       copy: "Код хуулах",
       copied: "Хуулсан",
-      hintParty: "RunParty: Лобби, голын товч, Кодоор нэгдэх.",
-      hintCrew: "RunParty: Багууд, голын товч, Кодоор нэгдэх."
+      hintParty: "RunParty: зүүн дээд буланд +, Кодоор нэгдэх.",
+      hintCrew: "RunParty: зүүн дээд буланд +, Кодоор нэгдэх."
     }
   };
   var lang = (navigator.language || "en").slice(0, 2).toLowerCase();
