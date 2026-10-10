@@ -48,53 +48,59 @@
     <img class="logo" src="icon.png" alt="" width="64" height="64">
     <h1>RunParty <span>Privacy policy</span></h1>
   </header>
-  <p class="updated">Effective date: 9 October 2026</p>
-  <nav><a href="#phone">On your phone</a><a href="#server">On the server</a><a href="#others">What others see</a><a href="#delete">Delete your data</a><a href="#contact">Contact</a></nav>
+  <p class="updated">Effective date: 10 October 2026</p>
+  <nav><a href="#phone">On your phone</a><a href="#server">On the server</a><a href="#purchases">Purchases</a><a href="#others">What others see</a><a href="#delete">Delete your data</a><a href="#contact">Contact</a></nav>
 
   <section>
-    <p>RunParty is an app for running, hiking and riding together: people host parties (a route, a time, a pace and a number of places), others join, and each party has a chat and a schedule. It is made by an independent developer. This policy explains, in plain words, what stays on your phone, what goes to RunParty's server, who can see it, and how to delete it.</p>
+    <p>RunParty is an app for running, hiking and riding together: people host routes (a way to go, a time, a pace and a number of places), others join, and each route has a chat and a schedule. Runners can also form clubs. It is made by an independent developer. This policy explains, in plain words, what stays on your phone, what goes to RunParty's server, who can see it, and how to delete it.</p>
 
     <h2>In short</h2>
     <ul>
       <li><strong>Your runs, your GPS tracks, your steps, your photos and your videos stay on your phone.</strong></li>
-      <li>The server holds only what is needed to run together: your profile, the parties you host or join, their chat, your check-ins, and a short public summary you can switch off.</li>
+      <li>The server holds only what is needed to run together: your profile, the routes and clubs you host or join, their chat, your check-ins, and a short public summary you can switch off.</li>
       <li>No ads, no advertising ID, no analytics and no tracking. Nothing is sold.</li>
     </ul>
 
     <h2 id="phone">What stays on your phone</h2>
     <ul>
-      <li><strong>Your position</strong>, with Android's location permission, to show you on the map, find parties near you and plan routes. Your track is not sent anywhere.</li>
-      <li><strong>Steps and activity</strong>, from Health Connect (Apple Health on iPhone) if you allow it, for your streaks, step rank and daily goal. Steps never leave the phone.</li>
+      <li><strong>Your position</strong>, with the phone's location permission, to show you on the map, record the route you are running (also with the screen locked, while a run is on) and plan routes. Your track is not sent anywhere.</li>
+      <li><strong>Steps and activity</strong>, from Health Connect (Apple Health on iPhone) if you allow it, for your streaks, level and daily goal. Steps never leave the phone.</li>
       <li><strong>Photos from your gallery</strong>, if you allow it, only to put the ones taken during a run on that run's route in the pictures and videos you make. They are not uploaded.</li>
       <li><strong>Pictures and videos you make</strong> are saved in your gallery (Pictures and Movies, RunParty).</li>
-      <li><strong>Reminders</strong> are scheduled on the phone, and the phone's motion sensor only moves a button slightly while it is on screen.</li>
+      <li><strong>The compass</strong>, only to turn the map with the phone while you choose that.</li>
+      <li><strong>Reminders</strong>, the step notification and your recent searches are kept on the phone.</li>
     </ul>
 
     <h2 id="server">What goes to the server</h2>
     <p>RunParty's server runs on Supabase (in Seoul, South Korea). It keeps:</p>
     <ul>
-      <li><strong>Your account</strong>: an anonymous sign-in made by the app, and, if you link one, your Google or Apple account or email address.</li>
+      <li><strong>Your account</strong>: an anonymous sign-in made by the app, and, if you link one, your Google or Apple account's email address.</li>
       <li><strong>Your profile</strong>: the name you choose, your profile photo if you add one (made small, 256 pixels), your country, a few words about you, and your Instagram name if you add it.</li>
-      <li><strong>Parties and crews</strong> you host or join: their route, meeting point, time, pace and members, and the chat messages written in them.</li>
-      <li><strong>Check-ins</strong>: when you check in to a party run. To check in, the app sends your position once so the server can see you are near the start; the position itself is not kept. Check-ins count towards your level, badges and the leaderboard (distance gone with parties).</li>
-      <li><strong>A short public summary</strong>, unless you switch it off: your level, your run-streak weeks and your step rank (a name like Bronze, not your steps).</li>
-      <li><strong>Ratings</strong> runners give each other after a run, and who you have blocked or muted.</li>
+      <li><strong>Routes and clubs</strong> you host or join: their way, meeting point, time, pace and members, and the chat messages, replies and emoji reactions written in them.</li>
+      <li><strong>Check-ins</strong>: when the host starts a route's run, each member is checked in. Check-ins count towards your level, badges and the leaderboards (distance gone with routes). To show the leaderboard near you, the app sends your position at that moment; it is not kept.</li>
+      <li><strong>A short public summary</strong>, unless you switch it off: your level and your run-streak weeks (not your steps).</li>
+      <li><strong>Who you have blocked or muted</strong>, and reports you send.</li>
+      <li><strong>A notification token</strong>, if instant alerts are on, so the server can tell your phone about new chat lines and route changes through Firebase Cloud Messaging (Google). The message text is the only content sent.</li>
     </ul>
     <p>All of this travels encrypted (HTTPS).</p>
+
+    <h2 id="purchases">Purchases</h2>
+    <p>RunParty Pro and tips are bought through Google Play or the App Store, which handle the payment; RunParty never sees your card or bank details. The purchase is checked by RevenueCat (revenuecat.com, see their <a href="https://www.revenuecat.com/privacy/">privacy policy</a>), which receives your RunParty account id and the purchase. RunParty's server keeps which products you bought and when, so it knows you are Pro and your supporter badge. Other runners see that badge, not what you paid.</p>
 
     <h2>Other services the app uses</h2>
     <ul>
       <li><strong>Maps</strong> from OpenFreeMap (tiles.openfreemap.org): the app asks for the pieces of the map on the screen. See <a href="https://openfreemap.org/privacy/">openfreemap.org/privacy</a>.</li>
       <li><strong>Routes and place search</strong> from OpenRouteService, through RunParty's server: the points of a route you plan, or the words you search for, are sent to it, without your account.</li>
-      <li><strong>Weather</strong> from Open-Meteo (api.open-meteo.com): the meeting point and time of a party, to show its forecast.</li>
+      <li><strong>Weather</strong> from Open-Meteo (api.open-meteo.com): the meeting point and time of a route, to show its forecast.</li>
+      <li><strong>Profile pictures of the sample runners</strong> come from DiceBear (api.dicebear.com).</li>
     </ul>
     <p>Like every internet connection, these requests carry your phone's IP address.</p>
 
     <h2 id="others">What other people see</h2>
     <ul>
-      <li>Public parties, with their route, meeting point and time, can be seen by everyone using RunParty. Private parties only by the host, its runners and people with its code.</li>
-      <li>Other runners see your profile (name, photo, country, Instagram, the summary above, your badges earned with party runs, your ratings and crews), and your messages in the chats you are in.</li>
-      <li>Invite links and codes you share open the party or crew for whoever gets them.</li>
+      <li>Public routes, with their way, meeting point and time, can be seen by everyone using RunParty. Private routes only by the host, its runners and people with its code; club routes by the club's members.</li>
+      <li>Other runners see your profile (name, photo, country, Instagram, the summary above, your badges earned with route runs, your Pro or supporter badge and your clubs), and your messages and reactions in the chats you are in.</li>
+      <li>Invite links and codes you share open the route or club for whoever gets them.</li>
     </ul>
 
     <h2>Sharing</h2>
@@ -106,8 +112,9 @@
     <h2 id="delete">Keeping and deleting your data</h2>
     <ul>
       <li>What is on your phone is deleted when you clear the app's storage or uninstall it. Pictures and videos you saved stay in your gallery until you delete them.</li>
-      <li>You can delete your own chat messages, leave parties and crews, and change or remove your profile photo and details in the app.</li>
-      <li>To delete your account and everything the server keeps about you, write to us (below) with your RunParty name; we delete it within 30 days.</li>
+      <li>You can delete your own chat messages, take back reactions, leave routes and clubs, and change or remove your profile photo and details in the app.</li>
+      <li><strong>Delete my account</strong> (Profile, Settings, at the bottom) deletes your account and everything the server keeps about you at once: your profile and photo, the routes you host, the clubs you own, your messages, reactions and check-ins. Purchase records needed for refunds and tax stay with Google Play, the App Store and RevenueCat under their own policies.</li>
+      <li>You can also write to us (below) with your RunParty name, and we delete it within 30 days.</li>
     </ul>
 
     <h2>Changes</h2>
